@@ -1,34 +1,20 @@
-import Countdown from './components/Countdown';
-import Interval from './types/Interval';
-import Section from './types/Section';
-import Timer from './types/Timer';
+import { FC } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 import './App.css';
 
-function App() {
-  // Start -- Dummy Data
-  const sec = new Section('section', 2);
-
-  const first = new Interval('first', 1);
-  const second = new Interval('second', 2);
-
-  const sec2 = new Section('third', 1);
-
-  sec.addInterval(first);
-  sec.addInterval(second);
-
-  sec2.addInterval(first);
-
-  const timer = new Timer('timer');
-  timer.addSection(sec);
-  timer.addSection(sec2);
-  // End -- Dummy Data
-
+const App: FC = () => {
   return (
-    <div className="App">
-      <Countdown timer={timer} />
+    <div>
+      <h1>APP page</h1>
+      <nav className="page-links">
+        <Link to={'countdown'}>Countdown</Link>
+        <Link to={'list'}>List</Link>
+        <Link to={'new'}>Add new</Link>
+      </nav>
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;

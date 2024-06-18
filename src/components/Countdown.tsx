@@ -2,11 +2,11 @@ import { FC, useEffect, useState } from 'react';
 
 import Timer from '../types/Timer';
 
-interface CountdownProps {
+interface Props {
   timer: Timer;
 }
 
-const Countdown: FC<CountdownProps> = ({ timer }) => {
+const Countdown: FC<Props> = ({ timer }) => {
   const [intervals] = useState(timer.getIntervalSequence());
   const [index, setIndex] = useState(0);
   const [remainingSeconds, setRemainingSeconds] = useState(
