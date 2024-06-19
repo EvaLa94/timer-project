@@ -1,7 +1,10 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import Interval from './Interval';
 
 class Section {
   private _intervals: Interval[] = [];
+  private _id: string = uuidv4();
 
   constructor(private _title: string, private _repeat: number) {}
 
@@ -15,6 +18,10 @@ class Section {
 
   public get intervals() {
     return this._intervals;
+  }
+
+  public get id() {
+    return this._id;
   }
 
   public addInterval(interval: Interval) {

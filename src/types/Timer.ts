@@ -1,9 +1,12 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import { repeat } from '../utils';
 import Interval from './Interval';
 import Section from './Section';
 
 class Timer {
   private _sections: Section[] = [];
+  private _id: string = uuidv4();
 
   constructor(private _title: string) {}
 
@@ -13,6 +16,10 @@ class Timer {
 
   public get sections() {
     return this._sections;
+  }
+
+  public get id() {
+    return this._id;
   }
 
   public addSection(section: Section) {

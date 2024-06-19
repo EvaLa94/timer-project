@@ -1,4 +1,7 @@
+import { v4 as uuidv4 } from 'uuid';
+
 class Interval {
+  private _id: string = uuidv4();
   constructor(private _title: string, private _seconds: number) {}
 
   public get title() {
@@ -7,6 +10,10 @@ class Interval {
 
   public get seconds() {
     return this._seconds;
+  }
+
+  public get id() {
+    return this._id;
   }
 }
 
