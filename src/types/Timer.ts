@@ -22,6 +22,10 @@ class Timer {
     return this._id;
   }
 
+  public set title(value: string) {
+    this._title = value;
+  }
+
   public addSection(section: Section) {
     this._sections.push(section);
   }

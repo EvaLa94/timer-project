@@ -15,6 +15,14 @@ class Interval {
   public get id() {
     return this._id;
   }
+
+  public set title(value: string) {
+    this._title = value;
+  }
+
+  public set seconds(value: number) {
+    this._seconds = value;
+  }
 }
 
 export default Interval;

@@ -24,6 +24,14 @@ class Section {
     return this._id;
   }
 
+  public set title(value: string) {
+    this._title = value;
+  }
+
+  public set repeat(value: number) {
+    this._repeat = value;
+  }
+
   public addInterval(interval: Interval) {
     this._intervals.push(interval);
   }
